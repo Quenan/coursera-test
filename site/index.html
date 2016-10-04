@@ -1,9 +1,180 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hola Coursera!</title>
+	<title>Ejemplo de posicionamiento</title>
 </head>
+
+<style type="text/css">
+	
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	h1 {
+		margin-bottom: 15px;
+	}
+	h2 {
+		text-align: center;
+	}
+	div#container {
+		background-color: #00FFFF;
+		position: relative;
+		top: 25px;
+	}
+	p {
+		width: 50px;
+		height: 50px;
+		border: 1px solid black;
+		margin-bottom: 15px;
+	}
+	p.resp {
+		border: 1px solid black;
+		  background-color: #A52A2A;
+		  width: 90%;
+		  height: 50px;
+		  margin-right: auto;
+		  margin-left: auto;
+		  font-family: Helvetica;
+		  color: white;
+	}
+	#p1 {
+		background-color: #A52A2A;
+		position: relative;
+		top: 65px;
+		left: 65px;
+	}
+	#p2 {
+		background-color: #DEB887;
+	}
+	#p3 {
+		background-color: #5F9EA0;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#p4 {
+		background-color: #FF7F50;
+	}
+	p#expl {
+		border: none;
+		clear: both;
+		font-size: 16px;
+		width: 100%;
+		height: 100%;
+		align-content: center;
+		margin-top: 30px;
+	}
+	table#table1 {
+		background-color: orange;
+		padding-right: 2px;
+		padding-left: 2px;
+		text-align: center;
+		border: solid;
+	}
+
+	table#table1 tr {
+		width: 100%;
+	}
+	.row {
+		width: 100%;
+	}
+	.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    	float: left;
+    	border: 1px solid green;
+ 	 }
+	.col-lg-1 {
+    width: 8.33%;
+	  }
+	  .col-lg-2 {
+	    width: 16.66%;
+	  }
+	  .col-lg-3 {
+	    width: 25%;
+	  }
+	  .col-lg-4 {
+	    width: 33.33%;
+	  }
+	  .col-lg-5 {
+	    width: 41.66%;
+	  }
+	  .col-lg-6 {
+	    width: 50%;
+	  }
+	  .col-lg-7 {
+	    width: 58.33%;
+	  }
+	  .col-lg-8 {
+	    width: 66.66%;
+	  }
+	  .col-lg-9 {
+	    width: 74.99%;
+	  }
+	  .col-lg-10 {
+	    width: 83.33%;
+	  }
+	  .col-lg-11 {
+	    width: 91.66%;
+	  }
+	  .col-lg-12 {
+	    width: 100%;
+	  }
+</style>
 <body>
 <h1>Hola Coursera!</h1>
+<div id="container">
+	<p id="p1">1</p>
+	<p id="p2">2</p>
+	<p id="p3">3</p>
+	<p id="p4">4</p>
+</div>
+<hr>
+<div>
+	<p id="expl">
+		- Cuando ponemos relative al primer párrafo, el de abajo sigue en su sitio, ya que para él, el párrafo de arriba no se ha movido de su sitio.<br>
+		- Cuando ponemos absolute al tercer párrafo, y le ponemos un offset de top:0 y left:0, se coloca en la posiión 0,0 del documento. Esto es debido a que busca el ancestro más cercano que sea relative, y es la etiqueta html!.<br>
+		- En el siguiente paso ponemos posicionamiento relative al div#container, y ahora el párrafo 3 sí que se posiciona en el origen del div. Si probamos a poner un offset 
+
+	</p>
+</div>
+<hr>
+<div id="med_que">
+	<h2>MEDIA QUERY</h2>
+	<p id="expl">
+		- Las media queries son estilos que se aplican si se cumplen ciertas reglas. Las sintaxis es como sigue: <br>
+		<code>
+			@media (max-width: 767px) {
+				p {
+					color: blues;
+				}
+			}
+		</code><br>
+		Lo que significa que si se cumple que max-width es 767, entonces se ponen los párrafos de color blue. Uno muy usado es @media (orientation: portrait) {...}.<br>
+		- Las reglas se pueden combinar con operadores lógicos (and, or se pone con ",")<br>
+		- Se debe procurar no poner diferentes reglas que se cumplan a la vez en diferentes estilos, de forma que se apliquen dos estilos a la vez, esto es muy desaconsejable...
+	</p>
+</div>
+<hr>
+<div id="resp">
+	<h2>RESPONSIVE DESIGN</h2>
+	<p id="expl">
+		- Detectar el user-agent y utilizar diferentes webs para cada dispositivo es una alternativa para el diseño responsive, pero tiene algunas pegas, por ejemplo el diferente versionado, etc.<br>
+		- El diseño responsive utiliza en cambio un único layout, con estructura de grid de 12 columnas (en general) debido a que se puede dividir por muchos números (buena factorización). Por ejemplo:
+		
+	</p>
+	<div class="row">
+ 		<div class="col-md-6"><p class="resp">Item 1</p></div>
+  		<div class="col-md-6"><p class="resp">Item 2</p></div>
+	  	<div class="col-md-6"><p class="resp">Item 3</p></div>
+	  	
+	</div>
+
+		<br>
+		<p id="expl">
+			- Podemos poner cada columna del grid como un porcentaje. Si la anchura total es el 100%, cada columna del grid es 100/12 % = 8.33%.
+			- Estos grids se pueden anidar, de forma que cada unidad puede a su vez dividirse en otro grid de 12, etc.
+			- Ver el ejemplo 24, para ver cómo se usan esas escalas para crear un diseño responsive, que normalmente vendrá en frameworks que usemos como bootstrap.
+		</p>
+</div>
 </body>
 </html>
