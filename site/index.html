@@ -122,6 +122,7 @@
 </style>
 <body>
 <h1>Hola Coursera!</h1>
+<a href="#tw_boot"> Twitter Bootstrap</a>
 <div id="container">
 	<p id="p1">1</p>
 	<p id="p2">2</p>
@@ -151,7 +152,8 @@
 		</code><br>
 		Lo que significa que si se cumple que max-width es 767, entonces se ponen los párrafos de color blue. Uno muy usado es @media (orientation: portrait) {...}.<br>
 		- Las reglas se pueden combinar con operadores lógicos (and, or se pone con ",")<br>
-		- Se debe procurar no poner diferentes reglas que se cumplan a la vez en diferentes estilos, de forma que se apliquen dos estilos a la vez, esto es muy desaconsejable...
+		- Se debe procurar no poner diferentes reglas que se cumplan a la vez en diferentes estilos, de forma que se apliquen dos estilos a la vez, esto es muy desaconsejable...<br>
+		- Las reglas suelen separarse en lo que se conoce como breakpoints, que son los diferentes tamaños de pantalla para los que se aplicarán reglas diferentes.
 	</p>
 </div>
 <hr>
@@ -176,5 +178,12 @@
 			- Ver el ejemplo 24, para ver cómo se usan esas escalas para crear un diseño responsive, que normalmente vendrá en frameworks que usemos como bootstrap.
 		</p>
 </div>
+<hr>
+<h2 id="tw_boot">TWITTER BOOTSTRAP</h2>
+<p id="expl">
+- El contenido en bootstrap siempre está en un contenedor, que puede ser o bien fluido (container-fluid) o bien puede ser normal (regular-container). Container-fluid es que el contenido se ajusta al ancho del navegador y provee de padding consistente entre el grid y otro contenido. La clase Regular-container fija la anchura que sigue siendo responsive en función de la anchura del navegador, funcionando con puntos de ruptura como los de las media queries.<br>
+- col-SIZE-SPAN: size se indica con XS (moviles), SM (tablets), MD de medium y LG de large, e implica que si la pantalla es menor que el tamaño indicado, las columnas colapsarán (se superpondrán) una con otra, a no ser que exista otra regla que lo impida. SPAN indica cuántas columnas habrá, entre 1 y 12. Para XS, tiene la peculiaridad de que las columnas no colapsarán.<br>
+- Bootstrap necesita que el contenido esté, además de en una clase container, en una clase row:<br><code><div class="container"> <div class="row"> contenido </div></div></code>
+</p>
 </body>
 </html>
